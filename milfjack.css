@@ -1,0 +1,244 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    background-color: #3c1264;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.top-row {
+    display: flex;
+    flex: 0.05;
+    align-items: stretch;
+    background-image: url("https://w.wallhaven.cc/full/1p/wallhaven-1pv663.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 15%;
+}
+
+.top-box {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.top-box img {
+    max-width: 50%;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+.side-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.bottom-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-image: #3c1264;
+}
+
+.leftbox, .rightbox {
+    width: 700px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.leftbox img, .rightbox img {
+    max-width: 140%;
+    max-height: auto;
+    object-fit: contain;
+}
+
+.rightbox img {
+    padding-left: 100px;
+}
+
+.bigbox {
+    border-color: #da8ffd;
+    border-width: 2px;
+    margin-top: -100px;
+    background-color: rgba(242, 211, 255, 0.884);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+    position: relative;
+    width: 700px;
+    box-shadow: 0 0 30px 15px pink;
+    transition: box-shadow 0.3s ease;
+    height: 400px;
+}
+
+.bigbox.spinning {
+    animation: bigbox-flash 0.5s infinite alternate;
+}
+
+.bigbox.jackpot {
+    animation: bigbox-fast-flash 0.2s infinite alternate;
+}
+
+@keyframes bigbox-flash {
+    0% {
+        box-shadow: 0 0 30px 15px red;
+    }
+    100% {
+        box-shadow: 0 0 50px 25px red;
+    }
+}
+
+@keyframes bigbox-fast-flash {
+    0% {
+        box-shadow: 0 0 30px 15px red;
+    }
+    100% {
+        box-shadow: 0 0 60px 30px red;
+    }
+}
+
+.scorebox {
+    border-radius: 10px;
+    background-color: darkslateblue;
+    padding: 20px;
+    margin-top: 40px;
+    width: 500px;
+    height: 200px;
+    color: white;
+    font-size: 36px;
+    font-family: Impact, fantasy;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 70px;
+}
+
+.flash {
+    animation: text-flash 0.5s infinite alternate;
+}
+
+@keyframes text-flash {
+    0% {
+        color: white;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+    }
+    100% {
+        color: white;
+        text-shadow: 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: #180521;
+    }
+}
+
+.box {
+    width: 175px;
+    height: 175px;
+    background-color: #333;
+    border: 2px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.8;
+    margin-top: 200px;
+    margin-inline: 10px;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+.box.glow {
+    box-shadow: 0 0 15px 10px #ffffff;
+    border-color: white;
+}
+
+button {
+    margin-top: 300px;
+    padding: 50px 60px;
+    font-size: 30px;
+    background-color: rgb(154, 1, 219);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    margin-inline: 10px;
+}
+
+button:hover {
+    background-color: rgb(179, 0, 255);
+    transform: scale(1.1);
+    box-shadow: 0 0 50px 15px rgb(179, 0, 255);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 25px 10px hotpink;
+}
+
+.back-button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.back-button {
+    padding: 20px 30px;
+    font-size: 26px;
+    background-color: darkorchid;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: navy;
+}
+
+.divider {
+    width: 100%;
+    height: 5px;
+    background-color: pink;
+}
